@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>প্রোগ্রামিং শেখো - HTML, CSS & JavaScript</title>
+    <!-- Google Fonts for Bengali -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tiro+Bangla:ital@0;1&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="light-mode">
+    <!-- Navbar (Mobile header) -->
+    <header class="mobile-header">
+        <button id="sidebar-toggle" class="icon-btn" aria-label="Toggle Sidebar">
+            <i data-feather="menu"></i>
+        </button>
+        <div class="logo" onclick="app.loadHome()" style="cursor: pointer;">প্রোগ্রামিং<span>শেখো</span></div>
+        <button id="theme-toggle-mobile" class="icon-btn theme-toggle" aria-label="Toggle Theme">
+            <i data-feather="moon"></i>
+        </button>
+    </header>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo desktop-logo" onclick="app.loadHome()" style="cursor: pointer;">
+                    প্রোগ্রামিং<span>শেখো</span></div>
+                <button id="sidebar-close" class="icon-btn mobile-only" aria-label="Close Sidebar">
+                    <i data-feather="x"></i>
+                </button>
+            </div>
+
+            <div class="search-box">
+                <i data-feather="search"></i>
+                <input type="text" id="search-input" placeholder="খুঁজুন...">
+            </div>
+
+            <nav class="course-nav">
+                <!-- Home Section -->
+                <div class="nav-section">
+                    <button class="nav-section-header" onclick="app.loadHome()">
+                        <div class="nav-section-title">
+                            <i data-feather="home" style="color: var(--primary-color);"></i>
+                            <span>হোম পেজ</span>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- HTML Section -->
+                <div class="nav-section">
+                    <button class="nav-section-header active" data-target="nav-html">
+                        <div class="nav-section-title">
+                            <i data-feather="layout" class="text-orange"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <i data-feather="chevron-down" class="chevron"></i>
+                    </button>
+                    <ul class="nav-items" id="nav-html">
+                        <!-- Items dynamically injected by app.js -->
+                    </ul>
+                </div>
+
+                <!-- CSS Section -->
+                <div class="nav-section">
+                    <button class="nav-section-header" data-target="nav-css">
+                        <div class="nav-section-title">
+                            <i data-feather="edit-3" class="text-blue"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <i data-feather="chevron-down" class="chevron"></i>
+                    </button>
+                    <ul class="nav-items" id="nav-css" style="display: none;">
+                        <!-- Items dynamically injected by app.js -->
+                    </ul>
+                </div>
+
+                <!-- JS Section -->
+                <div class="nav-section">
+                    <button class="nav-section-header" data-target="nav-js">
+                        <div class="nav-section-title">
+                            <i data-feather="code" class="text-yellow"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <i data-feather="chevron-down" class="chevron"></i>
+                    </button>
+                    <ul class="nav-items" id="nav-js" style="display: none;">
+                        <!-- Items dynamically injected by app.js -->
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button id="theme-toggle-desktop" class="theme-toggle-btn">
+                    <i data-feather="moon"></i> <span class="theme-text">ডার্ক মোড</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content" id="main-content">
+            <div class="content-wrapper">
+                <!-- Content will be injected here -->
+                <div id="home-view" class="hero-section text-center">
+                    <h1 class="hero-title">ওয়েব ডেভেলপমেন্ট শিখুন <span class="text-gradient">সহজ বাংলায়</span></h1>
+                    <p class="hero-subtitle">HTML, CSS এবং JavaScript এর মাধ্যমে আপনার প্রথম ওয়েবসাইট তৈরি করা শিখুন।
+                        প্রজেক্ট-ভিত্তিক ধাপে ধাপে শেখার সেরা মাধ্যম।</p>
+
+                    <div class="hero-cards grid-3">
+                        <div class="hero-card html-card" onclick="app.loadChapter('html', 'html-intro')">
+                            <i data-feather="layout" class="large-icon"></i>
+                            <h3>HTML</h3>
+                            <p>ওয়েবসাইটের কাঠামো</p>
+                            <button class="btn btn-primary">শুরু করুন</button>
+                        </div>
+                        <div class="hero-card css-card" onclick="app.loadChapter('css', 'css-intro-selector')">
+                            <i data-feather="edit-3" class="large-icon"></i>
+                            <h3>CSS</h3>
+                            <p>ডিজাইন ও স্টাইলিং</p>
+                            <button class="btn btn-primary">শুরু করুন</button>
+                        </div>
+                        <div class="hero-card js-card" onclick="app.loadChapter('js', 'js-intro')">
+                            <i data-feather="code" class="large-icon"></i>
+                            <h3>JavaScript</h3>
+                            <p>লজিক ও ইন্টারঅ্যাক্টিভিটি</p>
+                            <button class="btn btn-primary">শুরু করুন</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="chapter-content" style="display: none;"></div>
+
+                <!-- Quiz Container -->
+                <div id="quiz-container" class="quiz-container" style="display: none;">
+                    <!-- Quiz will be injected here -->
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="chapter-navigation" id="chapter-navigation" style="display: none;">
+                    <button class="btn btn-outline nav-btn" id="prev-btn">
+                        <i data-feather="arrow-left"></i> পূর্ববর্তী অধ্যায়
+                    </button>
+                    <button class="btn btn-primary nav-btn" id="next-btn">
+                        পরবর্তী অধ্যায় <i data-feather="arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Footer -->
+                <footer class="app-footer text-center"
+                    style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); font-size: 0.95rem; color: var(--text-secondary);">
+                    <p style="margin: 0;">Created by <span style="color: #ef4444;">❤️</span> Ezaz Ahmed</p>
+                </footer>
+            </div>
+        </main>
+
+        <!-- Overlay for mobile sidebar -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    </div>
+
+    <!-- Content Arrays -->
+    <script src="js/data-html.js"></script>
+    <script src="js/data-css.js"></script>
+    <script src="js/data-js.js"></script>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+    </script>
+</body>
+
+</html>
