@@ -236,8 +236,7 @@ const app = {
             `;
         }
         
-        // Render Quiz if exists
-        QuizSystem.renderQuiz(chapter.quiz, chapterId);
+
         
         // Update Navigation Buttons
         this.updateNavButtons();
@@ -289,8 +288,7 @@ const app = {
         if(this.contentArea) this.contentArea.style.display = 'none';
         if(this.chapterNavigation) this.chapterNavigation.style.display = 'none';
         
-        const quizContainer = document.getElementById('quiz-container');
-        if(quizContainer) quizContainer.style.display = 'none';
+
         
         document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
         document.querySelectorAll('.nav-section-header').forEach(header => {

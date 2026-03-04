@@ -13,6 +13,8 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./favicon/favicon-96x96.png" type="image/x-icon">
 
     <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
@@ -126,7 +128,7 @@
                             <p>ওয়েবসাইটের কাঠামো</p>
                             <button class="btn btn-primary">শুরু করুন</button>
                         </div>
-                        <div class="hero-card css-card" onclick="app.loadChapter('css', 'css-intro-selector')">
+                        <div class="hero-card css-card" onclick="app.loadChapter('css', 'css-intro')">
                             <i data-feather="edit-3" class="large-icon"></i>
                             <h3>CSS</h3>
                             <p>ডিজাইন ও স্টাইলিং</p>
@@ -143,10 +145,7 @@
 
                 <div id="chapter-content" style="display: none;"></div>
 
-                <!-- Quiz Container -->
-                <div id="quiz-container" class="quiz-container" style="display: none;">
-                    <!-- Quiz will be injected here -->
-                </div>
+
 
                 <!-- Navigation Buttons -->
                 <div class="chapter-navigation" id="chapter-navigation" style="display: none;">
@@ -177,7 +176,7 @@
 
     <!-- Scripts -->
     <script src="js/data.js"></script>
-    <script src="js/quiz.js"></script>
+
     <script src="js/app.js"></script>
     <script>
         // Initialize Feather Icons
